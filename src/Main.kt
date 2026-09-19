@@ -1,14 +1,15 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 fun main() {
-    val name = "Kotlin"
-    //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-    // to see how IntelliJ IDEA suggests fixing it.
-    println("Hello, " + name + "!")
+    println("Simulasi Sistem Notifikasi Aplikasi Mobile")
 
-    for (i in 1..5) {
-        //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-        // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-        println("i = $i")
-    }
+    val emailService: NotificationAction =
+        EmailNotification("mahasiswa.informatika@univ.ac.id")
+    emailService.sendNotification("Kode OTP verifikasi aplikasi mobile: 1234")
+
+    val pushService: NotificationAction =
+        PushNotification("fcm_token_xyz123_android_phone")
+    pushService.sendNotification("Diskon 50% khusus pengguna baru hari ini! Klik di sini.")
+
+    val smsService: NotificationAction =
+        SMSNotification("081234567898")
+    smsService.sendNotification("Pulsa Anda hampir habis!")
 }

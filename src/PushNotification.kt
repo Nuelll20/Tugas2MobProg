@@ -3,7 +3,7 @@ class PushNotification (
 ): NotificationAction{
 
     override fun sendNotification (msg: String){
-        println("Email [$emailAddress]")
+        println("Email $emailAddress")
         println(" $msg")
     }
 }
